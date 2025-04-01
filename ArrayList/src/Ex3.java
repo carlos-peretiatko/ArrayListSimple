@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Ex3 {
     //Crie uma Array List
@@ -11,6 +12,7 @@ public class Ex3 {
     public static void main(String[] args) {
         
         List<Double> lista = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
         double numero = -1; //chave
         double menor = Double.MAX_VALUE;
         double maior = Double.MIN_VALUE;
@@ -19,7 +21,7 @@ public class Ex3 {
         // Loop para receber os números do usuário
         while (numero != 0) {
             System.out.print("Digite um número decimal (0 para sair): ");
-            numero = Double.parseDouble(System.console().readLine());
+            numero = scanner.nextDouble();
             if (numero != 0) {
                 lista.add(numero);
                 // Verifica se o número é menor ou maior que os valores atuais
@@ -37,6 +39,7 @@ public class Ex3 {
         System.out.println("Maior número: " + maior);
         System.out.println("Média: " + (soma / lista.size())); ;
 
+        scanner.close();
     }
     
 }
